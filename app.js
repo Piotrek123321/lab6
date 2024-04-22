@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 const errorController = require('./controllers/error');
 const errorRoutes = require('./routes/error');
 const path = require('path');
+const bookRoutes = require('./routes/book');
+const userRoutes = require('./routes/user');
+
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -19,6 +22,8 @@ app.use(
   })
 );
 
+app.use('/user', userRoutes);
+app.use('/', bookRoutes);
 app.use('*', errorRoutes);
 
 app.listen(PORT, () => {
