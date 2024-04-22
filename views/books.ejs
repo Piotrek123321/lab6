@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Books</h1>
+    <%- include ('partials/login.ejs') %>
     <% if (!userId) { %>
         <p>Sorry, you cannot access library without logging into the system.</p>
     <% } else { %>
@@ -17,7 +18,6 @@
                 </li>
             <% }); %>
         </ul>
-        <a href="/user/set">Log in</a>
     <% } %>
 </body>
 </html>
